@@ -42,24 +42,26 @@ precious.addEventListener('click', () => {
 
       if (activeRings.length === 0) {
         clearInterval(ringCheck);
+
+        // Patlama öncesi Gandalf ve ışık beam'i gösteriyoruz
         setTimeout(() => {
-          lightningSound.play();
+          lightningSound.play(); // Yıldırım sesi
+          gandalf.classList.add('show');
+          lightBeam.classList.add('show');
+
           setTimeout(() => {
-            gandalf.classList.add('show');
-            lightBeam.classList.add('show');
+            explosion.style.display = 'block'; // Patlama efekti
+            winSound.play(); // Kazanma sesi
+
+            // Patlama sonrası Sauron kaybolacak
+            sauron.style.display = 'none'; 
 
             setTimeout(() => {
-              explosion.style.display = 'block';
-              sauronContainer.style.display = 'none';
-              winSound.play();
-
-              setTimeout(() => {
-                explosion.style.display = 'none';
-                lightBeam.style.display = 'none';
-              }, 1500);
-            }, 1000);
-          }, 1000);
-        }, sauronSound.duration * 1000 - 1000);
+              explosion.style.display = 'none';
+              lightBeam.style.display = 'none';
+            }, 1500);
+          }, 1000); // Patlama efektinden sonra 1 saniye bekle
+        }, sauronSound.duration * 1000 - 1000); // Patlamadan önceki doğru zamanlama
       }
     }, 100);
   }
