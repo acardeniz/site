@@ -64,9 +64,9 @@ precious.addEventListener('click', () => {
               // EKLENDİ: Shire ekranı gösteriliyor
               shire.style.display = 'block';
               shire.style.animation = 'shireSlide 2s forwards';
-            }, 1500);
+            }, 1000);
           }, 1000); // Patlama efektinden sonra 1 saniye bekle
-        }, sauronSound.duration * 1000 - 1000); // Patlamadan önceki doğru zamanlama
+        }, sauronSound.duration * 400); // Patlamadan önceki doğru zamanlama
       }
     }, 100);
   }
