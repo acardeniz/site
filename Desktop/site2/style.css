@@ -101,15 +101,29 @@ body {
 
 /* Shire */
 #shire {
-  position: absolute;
-  bottom: -100%; /* Başlangıçta ekranın dışında */
+  position: fixed;
+  bottom: -100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('shire.png') no-repeat center center;
-  background-size: cover;
+  object-fit: cover;
   display: none;
-  z-index: 30;
+  z-index: 0; /* En arkada kalır */
+}
+
+@keyframes shireSlide {
+  to {
+    bottom: 0;
+  }
+}
+
+
+@keyframes shireSlide {
+  to {
+    bottom: 0;
+  }
+}
+
 }
 @keyframes shireSlide {
   0% { bottom: -100%; }

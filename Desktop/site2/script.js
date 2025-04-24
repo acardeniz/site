@@ -8,6 +8,7 @@ const explosion = document.getElementById('explosion');
 const sauronSound = document.getElementById('sauronSound');
 const lightningSound = document.getElementById('lightningSound');
 const winSound = document.getElementById('winSound');
+const shire = document.getElementById('shire'); // Eklendi: Shire elemanı
 
 let count = 0;
 let activeRings = [];
@@ -59,6 +60,10 @@ precious.addEventListener('click', () => {
             setTimeout(() => {
               explosion.style.display = 'none';
               lightBeam.style.display = 'none';
+
+              // EKLENDİ: Shire ekranı gösteriliyor
+              shire.style.display = 'block';
+              shire.style.animation = 'shireSlide 2s forwards';
             }, 1500);
           }, 1000); // Patlama efektinden sonra 1 saniye bekle
         }, sauronSound.duration * 1000 - 1000); // Patlamadan önceki doğru zamanlama
